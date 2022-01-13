@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29920.165
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BugzillaWebDriver", "BugzillaWebDriver\BugzillaWebDriver.csproj", "{CA075D2E-D898-469B-B418-2CD1019D1145}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BugzillaSpecFlow", "BugzillaSpecFlow\BugzillaSpecFlow.csproj", "{1FAA627C-A17E-4294-B5C9-5C28E67F1744}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CA075D2E-D898-469B-B418-2CD1019D1145}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA075D2E-D898-469B-B418-2CD1019D1145}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA075D2E-D898-469B-B418-2CD1019D1145}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA075D2E-D898-469B-B418-2CD1019D1145}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1FAA627C-A17E-4294-B5C9-5C28E67F1744}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1FAA627C-A17E-4294-B5C9-5C28E67F1744}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1FAA627C-A17E-4294-B5C9-5C28E67F1744}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1FAA627C-A17E-4294-B5C9-5C28E67F1744}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {782BA486-9927-4D68-B2BB-AE9F7FCA8941}
+	EndGlobalSection
+EndGlobal
