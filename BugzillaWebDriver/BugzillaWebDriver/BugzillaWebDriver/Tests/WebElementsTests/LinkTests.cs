@@ -12,25 +12,24 @@ namespace BugzillaWebDriver.Tests.WebElementsTests
     public class HyperLinkTests
     {
         [TestInitialize]
-        [Ignore]
         public void Init()
         {
             NavigationHelper.NavigateToHomePage();
         }
 
         [TestMethod]
-        [Ignore]
-        public void ClickHyperLinkTest()
+        public void ClickOnElement_FromLinkText_RightPageIsAccessed()
         {
-            IWebElement element = GenericHelper.GetElement(By.LinkText("File a Bug"));
+            IWebElement element = GenericHelper.GetElement(By.LinkText("New User"));
             element.Click();
+            Assert.AreEqual("bWAPP - New User", PageHelper.GetPageTitle());
         }
 
         [TestMethod]
-        [Ignore]
-        public void ClickHyperLinkTestFromLinkHelper()
+        public void ClickLink_FromLinkHelper_RightPageIsAccessed()
         {
-            LinkHelper.ClickLink(By.LinkText("File a Bug"));
+            LinkHelper.ClickLink(By.LinkText("New User"));
+            Assert.AreEqual("bWAPP - New User", PageHelper.GetPageTitle());
         }
     }
 }
