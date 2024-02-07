@@ -12,46 +12,41 @@ namespace BugzillaWebDriver.Tests.WebElementsTests
     public class ButtonTests
     {
         [TestInitialize]
-        [Ignore]
         public void Init()
         {
             NavigationHelper.NavigateToHomePage();
-            LinkHelper.ClickLink(By.LinkText("File a Bug"));
-            TextBoxHelper.TypeInTextBox(By.Id("Bugzilla_login"), ObjectRepository.Config.GetUsername());
-            TextBoxHelper.TypeInTextBox(By.Id("Bugzilla_password"), ObjectRepository.Config.GetPassword());
+            TextBoxHelper.TypeInTextBox(By.Id("login"), ObjectRepository.Config.GetUsername());
+            TextBoxHelper.TypeInTextBox(By.Id("password"), ObjectRepository.Config.GetPassword());
         }
 
         [TestMethod]
-        [Ignore]
         public void IsButtonEnabledTest()
         {
-            ButtonHelper.IsButtonEnabled(By.Id("log_in"));
+            ButtonHelper.IsButtonEnabled(By.Name("form"));
         }
 
         [TestMethod]
-        [Ignore]
         public void GetButtonTextTest()
         {
-            ButtonHelper.IsButtonEnabled(By.Id("log_in"));
-            Console.WriteLine(ButtonHelper.GetButtonText(By.Id("log_in")));
+            ButtonHelper.IsButtonEnabled(By.Name("form"));
+            Console.WriteLine();
+            Assert.AreEqual("submit", ButtonHelper.GetButtonText(By.Name("form")));
         }
 
         [TestMethod]
-        [Ignore]
         public void ClickOnLoginTest()
         {
-            IWebElement element = GenericHelper.GetElement(By.Id("log_in"));
+            IWebElement element = GenericHelper.GetElement(By.Name("form"));
             element.Click();
-            Assert.AreEqual(PageHelper.GetPageTitle(), "Enter Bug: TestProduct");
+            Assert.AreEqual(PageHelper.GetPageTitle(), "bWAPP - Portal");
             NavigationHelper.Logout();
         }
 
         [TestMethod]
-        [Ignore]
         public void ClickOnLoginFromButtonHelperTest()
         {
-            ButtonHelper.ClickButton(By.Id("log_in"));
-            Assert.AreEqual(PageHelper.GetPageTitle(), "Enter Bug: TestProduct");
+            ButtonHelper.ClickButton(By.Name("form"));
+            Assert.AreEqual(PageHelper.GetPageTitle(), "bWAPP - Portal");
             NavigationHelper.Logout();
         }
     }

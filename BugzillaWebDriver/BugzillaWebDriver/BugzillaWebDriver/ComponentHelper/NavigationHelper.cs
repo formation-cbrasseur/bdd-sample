@@ -1,7 +1,9 @@
 ﻿using BugzillaWebDriver.BaseClasses;
+using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace BugzillaWebDriver.ComponentHelper
 {
@@ -19,8 +21,11 @@ namespace BugzillaWebDriver.ComponentHelper
 
         public static void Logout()
         {
-            // TODO: Check if user is logged in
-            ObjectRepository.Driver.Navigate().GoToUrl("http://localhost:5001/index.cgi?logout=1");
+            if (PageHelper.GetPageTitle() != "bWAPP - Login")
+                LinkHelper.ClickLink(By.LinkText("Logout"));
+
+            AlertHelper.Accept();
+            Task.Delay(100).Wait();
         }
     }
 }
