@@ -16,7 +16,7 @@ namespace BugzillaWebDriver.Tests.ConfigTests
         public void Init()
         {
             IConfiguration config = new ConfigurationBuilder()
-                .AddJsonFile(@"C:\Users\cdric\OneDrive\Bureau\Formations\FormationBehaviorDD\git\BugzillaWebDriver\BugzillaWebDriver\BugzillaWebDriver\appsettings.json")
+                .AddJsonFile("appsettings.json")
                 .AddEnvironmentVariables()
                 .Build();
 

@@ -12,6 +12,7 @@ namespace BugzillaWebDriver.Tests.WebElementsTests
     public class TextBoxTests
     {
         [TestInitialize]
+        [Ignore]
         public void Init()
         {
             NavigationHelper.NavigateToHomePage();
@@ -19,6 +20,7 @@ namespace BugzillaWebDriver.Tests.WebElementsTests
         }
 
         [TestMethod]
+        [Ignore]
         public void TextBoxTest()
         {
             IWebElement element = GenericHelper.GetElement(By.Id("Bugzilla_login"));
@@ -28,6 +30,7 @@ namespace BugzillaWebDriver.Tests.WebElementsTests
         }
 
         [TestMethod]
+        [Ignore]
         public void TextBoxFromHelperTest()
         {
             TextBoxHelper.TypeInTextBox(By.Id("Bugzilla_login"), ObjectRepository.Config.GetUsername());
@@ -35,6 +38,7 @@ namespace BugzillaWebDriver.Tests.WebElementsTests
         }
 
         [TestMethod]
+        [Ignore]
         public void ClearTextBoxTest()
         {
             TextBoxHelper.TypeInTextBox(By.Id("Bugzilla_login"), ObjectRepository.Config.GetUsername());

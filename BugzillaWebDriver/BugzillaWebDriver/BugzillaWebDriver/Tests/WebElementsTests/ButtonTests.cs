@@ -12,6 +12,7 @@ namespace BugzillaWebDriver.Tests.WebElementsTests
     public class ButtonTests
     {
         [TestInitialize]
+        [Ignore]
         public void Init()
         {
             NavigationHelper.NavigateToHomePage();
@@ -21,12 +22,14 @@ namespace BugzillaWebDriver.Tests.WebElementsTests
         }
 
         [TestMethod]
+        [Ignore]
         public void IsButtonEnabledTest()
         {
             ButtonHelper.IsButtonEnabled(By.Id("log_in"));
         }
 
         [TestMethod]
+        [Ignore]
         public void GetButtonTextTest()
         {
             ButtonHelper.IsButtonEnabled(By.Id("log_in"));
@@ -34,6 +37,7 @@ namespace BugzillaWebDriver.Tests.WebElementsTests
         }
 
         [TestMethod]
+        [Ignore]
         public void ClickOnLoginTest()
         {
             IWebElement element = GenericHelper.GetElement(By.Id("log_in"));
@@ -43,6 +47,7 @@ namespace BugzillaWebDriver.Tests.WebElementsTests
         }
 
         [TestMethod]
+        [Ignore]
         public void ClickOnLoginFromButtonHelperTest()
         {
             ButtonHelper.ClickButton(By.Id("log_in"));

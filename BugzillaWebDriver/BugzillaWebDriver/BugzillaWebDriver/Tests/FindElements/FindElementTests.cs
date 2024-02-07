@@ -17,7 +17,7 @@ namespace BugzillaWebDriver.Tests.FindElements
         {
             try
             {
-                ObjectRepository.Driver.FindElement(By.LinkText("File a Bug"));
+                ObjectRepository.Driver.FindElement(By.LinkText("Blog"));
             }
             catch (NoSuchElementException ex)
             {
@@ -42,19 +42,19 @@ namespace BugzillaWebDriver.Tests.FindElements
         [TestMethod]
         public void GetElementFromGenericHelper()
         {
-            Assert.IsNotNull(GenericHelper.GetElement(By.LinkText("File a Bug")));
+            Assert.IsNotNull(GenericHelper.GetElement(By.LinkText("Blog")));
         }
 
         [TestMethod]
         public void IsElementPresentOnce()
         {
-            Assert.IsTrue(ObjectRepository.Driver.FindElements(By.LinkText("File a Bug")).Count == 1);
+            Assert.IsTrue(ObjectRepository.Driver.FindElements(By.LinkText("Blog")).Count == 1);
         }
 
         [TestMethod]
         public void IsElementPresentOnceFromGenericHelper()
         {
-            Assert.IsTrue(GenericHelper.IsElementPresentOnce(By.LinkText("File a Bug")));
+            Assert.IsTrue(GenericHelper.IsElementPresentOnce(By.LinkText("Blog")));
         }
     }
 }

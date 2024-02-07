@@ -12,6 +12,7 @@ namespace BugzillaWebDriver.Tests.WebElementsTests
     public class CheckBoxTests
     {
         [TestMethod]
+        [Ignore]
         public void IsCheckBoxChecked()
         {
             NavigationHelper.NavigateToHomePage();

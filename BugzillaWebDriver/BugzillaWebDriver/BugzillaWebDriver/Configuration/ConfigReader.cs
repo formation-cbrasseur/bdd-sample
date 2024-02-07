@@ -16,7 +16,7 @@ namespace BugzillaWebDriver.Configuration
         public ConfigReader()
         {
             IConfiguration config = new ConfigurationBuilder()
-                .AddJsonFile(@"C:\Users\cdric\OneDrive\Bureau\Formations\FormationBehaviorDD\git\BugzillaWebDriver\BugzillaWebDriver\BugzillaWebDriver\appsettings.json")
+                .AddJsonFile("appsettings.json")
                 .AddEnvironmentVariables()
                 .Build();
 

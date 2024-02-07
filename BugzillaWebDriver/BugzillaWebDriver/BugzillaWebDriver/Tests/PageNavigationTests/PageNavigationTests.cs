@@ -41,24 +41,22 @@ namespace BugzillaWebDriver.Tests.PageNavigationTests
         public void ClickOnLoginFromButtonHelperAndCheckPageTitleTest()
         {
             NavigationHelper.NavigateToHomePage();
-            LinkHelper.ClickLink(By.LinkText("File a Bug"));
-            TextBoxHelper.TypeInTextBox(By.Id("Bugzilla_login"), ObjectRepository.Config.GetUsername());
-            TextBoxHelper.TypeInTextBox(By.Id("Bugzilla_password"), ObjectRepository.Config.GetPassword());
-            ButtonHelper.ClickButton(By.Id("log_in"));
-            Assert.AreEqual(PageHelper.GetPageTitle(), "Enter Bug: TestProduct");
-            NavigationHelper.NavigateToUrl("http://localhost:5001/index.cgi?logout=1");
+            TextBoxHelper.TypeInTextBox(By.Id("login"), ObjectRepository.Config.GetUsername());
+            TextBoxHelper.TypeInTextBox(By.Id("password"), ObjectRepository.Config.GetPassword());
+            ButtonHelper.ClickButton(By.Name("form"));
+            Assert.AreEqual("bWAPP - Portal", PageHelper.GetPageTitle());
+            NavigationHelper.NavigateToUrl("http://127.0.0.1/logout.php");
         }
 
         [TestMethod]
         public void ClickOnLoginFromButtonHelperAndCheckPageUrlTest()
         {
             NavigationHelper.NavigateToHomePage();
-            LinkHelper.ClickLink(By.LinkText("File a Bug"));
-            TextBoxHelper.TypeInTextBox(By.Id("Bugzilla_login"), ObjectRepository.Config.GetUsername());
-            TextBoxHelper.TypeInTextBox(By.Id("Bugzilla_password"), ObjectRepository.Config.GetPassword());
-            ButtonHelper.ClickButton(By.Id("log_in"));
-            Assert.AreEqual(PageHelper.GetPageUrl(), "http://localhost:5001/enter_bug.cgi");
-            NavigationHelper.NavigateToUrl("http://localhost:5001/index.cgi?logout=1");
+            TextBoxHelper.TypeInTextBox(By.Id("login"), ObjectRepository.Config.GetUsername());
+            TextBoxHelper.TypeInTextBox(By.Id("password"), ObjectRepository.Config.GetPassword());
+            ButtonHelper.ClickButton(By.Name("form"));
+            Assert.AreEqual("http://127.0.0.1/portal.php", PageHelper.GetPageUrl());
+            NavigationHelper.NavigateToUrl("http://127.0.0.1/logout.php");
         }
     }
 }

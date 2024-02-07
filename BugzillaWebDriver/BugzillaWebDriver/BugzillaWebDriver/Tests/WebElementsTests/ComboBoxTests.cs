@@ -12,6 +12,7 @@ namespace BugzillaWebDriver.Tests.WebElementsTests
     public class ComboBoxTests
     {
         [TestMethod]
+        [Ignore]
         public void ComboBoxListTests()
         {
             NavigationHelper.NavigateToHomePage();

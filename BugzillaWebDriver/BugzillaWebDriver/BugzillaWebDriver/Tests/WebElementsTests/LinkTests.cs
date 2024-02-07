@@ -12,12 +12,14 @@ namespace BugzillaWebDriver.Tests.WebElementsTests
     public class HyperLinkTests
     {
         [TestInitialize]
+        [Ignore]
         public void Init()
         {
             NavigationHelper.NavigateToHomePage();
         }
 
         [TestMethod]
+        [Ignore]
         public void ClickHyperLinkTest()
         {
             IWebElement element = GenericHelper.GetElement(By.LinkText("File a Bug"));
@@ -25,6 +27,7 @@ namespace BugzillaWebDriver.Tests.WebElementsTests
         }
 
         [TestMethod]
+        [Ignore]
         public void ClickHyperLinkTestFromLinkHelper()
         {
             LinkHelper.ClickLink(By.LinkText("File a Bug"));
