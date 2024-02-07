@@ -12,37 +12,33 @@ namespace BugzillaWebDriver.Tests.WebElementsTests
     public class TextBoxTests
     {
         [TestInitialize]
-        [Ignore]
         public void Init()
         {
             NavigationHelper.NavigateToHomePage();
-            LinkHelper.ClickLink(By.LinkText("File a Bug"));
         }
 
         [TestMethod]
-        [Ignore]
-        public void TextBoxTest()
+        public void GetTextBoxValue_WithConfigUsername_ReturnsUsername()
         {
-            IWebElement element = GenericHelper.GetElement(By.Id("Bugzilla_login"));
-            element.SendKeys(ObjectRepository.Config.GetUsername());
-            element = GenericHelper.GetElement(By.Id("Bugzilla_password"));
-            element.SendKeys(ObjectRepository.Config.GetPassword());
+            TextBoxHelper.TypeInTextBox(By.Id("login"), ObjectRepository.Config.GetUsername());
+            Assert.AreEqual(ObjectRepository.Config.GetUsername(), TextBoxHelper.GetTextBoxValue(By.Id("login")));
         }
 
         [TestMethod]
-        [Ignore]
-        public void TextBoxFromHelperTest()
+        public void TypeInTextBox_ForUsernameAndPassword_ReturnsRightValues()
         {
-            TextBoxHelper.TypeInTextBox(By.Id("Bugzilla_login"), ObjectRepository.Config.GetUsername());
-            TextBoxHelper.TypeInTextBox(By.Id("Bugzilla_password"), ObjectRepository.Config.GetPassword());
+            TextBoxHelper.TypeInTextBox(By.Id("login"), ObjectRepository.Config.GetUsername());
+            TextBoxHelper.TypeInTextBox(By.Id("password"), ObjectRepository.Config.GetPassword());
+            Assert.AreEqual(ObjectRepository.Config.GetUsername(), TextBoxHelper.GetTextBoxValue(By.Id("login")));
+            Assert.AreEqual(ObjectRepository.Config.GetPassword(), TextBoxHelper.GetTextBoxValue(By.Id("password")));
         }
 
         [TestMethod]
-        [Ignore]
-        public void ClearTextBoxTest()
+        public void ClearTextBox_WithInputFilled_EmptyTheTextBox()
         {
-            TextBoxHelper.TypeInTextBox(By.Id("Bugzilla_login"), ObjectRepository.Config.GetUsername());
-            TextBoxHelper.ClearTextBox(By.Id("Bugzilla_login"));
+            TextBoxHelper.TypeInTextBox(By.Id("login"), ObjectRepository.Config.GetUsername());
+            TextBoxHelper.ClearTextBox(By.Id("login"));
+            Assert.AreEqual(string.Empty, TextBoxHelper.GetTextBoxValue(By.Id("password")));
         }
     }
 }

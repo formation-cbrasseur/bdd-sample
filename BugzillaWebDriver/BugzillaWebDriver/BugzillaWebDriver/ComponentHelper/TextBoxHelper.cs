@@ -19,5 +19,11 @@ namespace BugzillaWebDriver.ComponentHelper
             element = GenericHelper.GetElement(locator);
             element.Clear();
         }
+
+        public static string GetTextBoxValue(By locator)
+        {
+            element = GenericHelper.GetElement(locator);
+            return element.GetAttribute("value");
+        }
     }
 }
