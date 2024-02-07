@@ -24,7 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BugzillaWebDriver\BugzillaWebDriver.csproj" />
+    <ProjectReference Include="..\BugzillaWebDriver\BwappWebDriver.csproj" />
   </ItemGroup>
 
 </Project>
