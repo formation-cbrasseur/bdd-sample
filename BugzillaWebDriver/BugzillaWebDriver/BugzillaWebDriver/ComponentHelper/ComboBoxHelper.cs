@@ -28,5 +28,11 @@ namespace BugzillaWebDriver.ComponentHelper
             select = new SelectElement(GenericHelper.GetElement(locator));
             return select.Options.Select((x) => x.Text).ToList();
         }
+        
+        public static string GetSelectedValue(By locator)
+        {
+            select = new SelectElement(GenericHelper.GetElement(locator));
+            return select.SelectedOption.Text;
+        }
     }
 }

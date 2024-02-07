@@ -12,16 +12,17 @@ namespace BugzillaWebDriver.Tests.WebElementsTests
     public class CheckBoxTests
     {
         [TestMethod]
-        [Ignore]
         public void IsCheckBoxChecked()
         {
             NavigationHelper.NavigateToHomePage();
-            LinkHelper.ClickLink(By.LinkText("File a Bug"));
-            TextBoxHelper.TypeInTextBox(By.Id("Bugzilla_login"), ObjectRepository.Config.GetUsername());
-            TextBoxHelper.TypeInTextBox(By.Id("Bugzilla_password"), ObjectRepository.Config.GetPassword());
-            Console.WriteLine(CheckBoxHelper.IsCheckBoxChecked(By.Id("Bugzilla_restrictlogin")));
-            CheckBoxHelper.CheckCheckBox(By.Id("Bugzilla_restrictlogin"));
-            Console.WriteLine(CheckBoxHelper.IsCheckBoxChecked(By.Id("Bugzilla_restrictlogin")));
+            LinkHelper.ClickLink(By.LinkText("New User"));
+            Console.WriteLine(CheckBoxHelper.IsCheckBoxChecked(By.Id("mail_activation")));
+            var actualCheckedBoxValue = CheckBoxHelper.IsCheckBoxChecked(By.Id("mail_activation"));
+            CheckBoxHelper.CheckCheckBox(By.Id("mail_activation"));
+            Console.WriteLine(CheckBoxHelper.IsCheckBoxChecked(By.Id("mail_activation")));
+            var newCheckedBoxValue = CheckBoxHelper.IsCheckBoxChecked(By.Id("mail_activation"));
+
+            Assert.AreEqual(newCheckedBoxValue, !actualCheckedBoxValue);
         }
     }
 }
