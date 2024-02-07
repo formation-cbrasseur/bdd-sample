@@ -22,10 +22,11 @@ namespace BugzillaWebDriver.ComponentHelper
         public static void Logout()
         {
             if (PageHelper.GetPageTitle() != "bWAPP - Login")
+            {
                 LinkHelper.ClickLink(By.LinkText("Logout"));
-
-            AlertHelper.Accept();
-            Task.Delay(100).Wait();
+                AlertHelper.Accept();
+                Task.Delay(100).Wait();
+            }
         }
     }
 }

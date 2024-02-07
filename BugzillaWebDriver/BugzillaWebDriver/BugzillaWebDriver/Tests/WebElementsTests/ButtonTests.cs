@@ -14,6 +14,7 @@ namespace BugzillaWebDriver.Tests.WebElementsTests
         [TestInitialize]
         public void Init()
         {
+            NavigationHelper.Logout();
             NavigationHelper.NavigateToHomePage();
             TextBoxHelper.TypeInTextBox(By.Id("login"), ObjectRepository.Config.GetUsername());
             TextBoxHelper.TypeInTextBox(By.Id("password"), ObjectRepository.Config.GetPassword());
