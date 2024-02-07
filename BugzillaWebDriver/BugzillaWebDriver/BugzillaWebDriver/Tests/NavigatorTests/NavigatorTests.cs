@@ -29,7 +29,6 @@ namespace BugzillaWebDriver.Tests.NavigatorTests
         }
 
         [TestMethod]
-        [Ignore]
         public void OpenFirefoxAndGoToHomePage()
         {
             IWebDriver driver = new FirefoxDriver();
