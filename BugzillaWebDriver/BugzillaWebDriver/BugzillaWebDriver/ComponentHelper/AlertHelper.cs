@@ -14,5 +14,11 @@ namespace BugzillaWebDriver.ComponentHelper
             IAlert alert = ObjectRepository.Driver.SwitchTo().Alert();
             alert.Accept();
         }
+
+        public static void Dismiss()
+        {
+            IAlert alert = ObjectRepository.Driver.SwitchTo().Alert();
+            alert.Dismiss();
+        }
     }
 }

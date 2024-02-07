@@ -12,7 +12,7 @@ namespace BugzillaWebDriver.Tests.WebElementsTests
     public class CheckBoxTests
     {
         [TestMethod]
-        public void IsCheckBoxChecked()
+        public void CheckCheckBox_UncheckedCheckBoxThenCheckIt_ReturnsOppositeCheckedBoxResult()
         {
             NavigationHelper.NavigateToHomePage();
             LinkHelper.ClickLink(By.LinkText("New User"));

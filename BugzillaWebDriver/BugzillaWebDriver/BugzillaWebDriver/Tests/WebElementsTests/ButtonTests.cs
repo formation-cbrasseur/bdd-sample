@@ -20,33 +20,33 @@ namespace BugzillaWebDriver.Tests.WebElementsTests
         }
 
         [TestMethod]
-        public void IsButtonEnabledTest()
+        public void IsButtonEnabled_ForEnabledButton_ReturnsTrue()
         {
-            ButtonHelper.IsButtonEnabled(By.Name("form"));
+            var enabled = ButtonHelper.IsButtonEnabled(By.Name("form"));
+            Assert.IsTrue(enabled);
         }
 
         [TestMethod]
-        public void GetButtonTextTest()
+        public void GetButtonText_OnLoginPageButton_ReturnsSubmit()
         {
             ButtonHelper.IsButtonEnabled(By.Name("form"));
-            Console.WriteLine();
             Assert.AreEqual("submit", ButtonHelper.GetButtonText(By.Name("form")));
         }
 
         [TestMethod]
-        public void ClickOnLoginTest()
+        public void ClickOnLoginFromWebElement_Click_GoesToPortalPage()
         {
             IWebElement element = GenericHelper.GetElement(By.Name("form"));
             element.Click();
-            Assert.AreEqual(PageHelper.GetPageTitle(), "bWAPP - Portal");
+            Assert.AreEqual("bWAPP - Portal", PageHelper.GetPageTitle());
             NavigationHelper.Logout();
         }
 
         [TestMethod]
-        public void ClickOnLoginFromButtonHelperTest()
+        public void ClickOnLoginFromHelper_Click_GoesToPortalPage()
         {
             ButtonHelper.ClickButton(By.Name("form"));
-            Assert.AreEqual(PageHelper.GetPageTitle(), "bWAPP - Portal");
+            Assert.AreEqual("bWAPP - Portal", PageHelper.GetPageTitle());
             NavigationHelper.Logout();
         }
     }
